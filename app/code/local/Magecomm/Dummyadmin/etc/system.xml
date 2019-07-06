@@ -1,0 +1,96 @@
+<config>
+    <tabs>
+        <magecomm translate="label">
+            <label>Magecomm Extensions</label>
+            <sort_order>100</sort_order>
+        </magecomm>
+    </tabs>
+    <sections>
+        <dummyadmin translate="label">
+            <label>Dummy Admin</label>
+            <tab>magecomm</tab>
+            <class>separator-top</class>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+                <groups>
+                    <settings translate="label comment">
+                        <label>Dummy Admin Settings</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>100</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <fields>
+                            <enabled translate="label">
+                                <label>Enable Dummy Admin</label>
+                                <frontend_type>select</frontend_type>
+                                <sort_order>10</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                <source_model>adminhtml/system_config_source_yesno</source_model>
+                            </enabled>
+                            <router translate="label">
+                                <label>URL</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>15</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                <depends>
+                                    <enabled>
+                                        <value>1</value>
+                                    </enabled>
+                                </depends>
+                            </router>
+                            <name translate="label">
+                                <label>Page Title</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>20</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                <depends>
+                                    <enabled>
+                                        <value>1</value>
+                                    </enabled>
+                                </depends>
+                            </name>
+                            <image translate="label">
+                                <label>Page Image</label>
+                                <frontend_type>image</frontend_type>
+                                <backend_model>adminhtml/system_config_backend_image</backend_model>
+                                <upload_dir config="system/filesystem/media" scope_info="1">wysiwyg/dummyadmin/metaimage</upload_dir>
+                                <base_url type="media" scope_info="1">wysiwyg/dummyadmin/metaimage</base_url>
+                                <sort_order>25</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                <depends>
+                                    <enabled>
+                                        <value>1</value>
+                                    </enabled>
+                                </depends>
+                            </image>
+                            <meta_title translate="label">
+                                <label>Page Meta Title</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>30</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                <depends>
+                                    <enabled>
+                                        <value>1</value>
+                                    </enabled>
+                                </depends>
+                            </meta_title>
+                        </fields>
+                    </settings>
+                </groups>
+        </dummyadmin>
+    </sections>
+</config>

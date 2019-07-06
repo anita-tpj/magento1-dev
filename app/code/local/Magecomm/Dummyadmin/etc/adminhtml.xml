@@ -1,0 +1,58 @@
+<config>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow everything</title>
+            </all>
+            <admin>
+                <children>
+                    <cms>
+                        <children>
+                            <magecomm_dummyadmin translate="title" module="magecomm_dummyadmin">
+                                <title>Dummy Admin</title>
+                                <sort_order>30</sort_order>
+                            </magecomm_dummyadmin>
+                        </children>
+                    </cms>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <magecomm_dummyadmin translate="title" module="magecomm_dummyadmin">
+                                        <title>Dummy Admin</title>
+                                    </magecomm_dummyadmin>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <cms>
+            <children>
+                <magecomm_dummyadmin translate="title" module="magecomm_dummyadmin">
+                    <title>Dummy Admin</title>
+                    <sort_order>30</sort_order>
+                    <action>adminhtml/index</action>
+                    <children>
+                        <manage_categories translate="title" module="magecomm_dummyadmin">
+                            <title>Manage Categories</title>
+                            <action>adminhtml/categories</action>
+                        </manage_categories>
+                        <manage_posts translate="title" module="magecomm_dummyadmin">
+                            <title>Manage Posts</title>
+                            <!--<action>adminhtml/posts</action>-->
+                        </manage_posts>
+                        <manage_configuration translate="title" module="magecomm_dummyadmin">
+                            <title>Manage Configuration</title>
+                            <action>adminhtml/system_config/edit/section/dummyadmin</action>
+                        </manage_configuration>
+                    </children>
+                </magecomm_dummyadmin>
+            </children>
+        </cms>
+    </menu>
+
+</config>

@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Magecomm_Dummyadmin>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Magecomm_Dummyadmin>
+    </modules>
+</config>

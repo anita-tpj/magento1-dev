@@ -1,0 +1,12 @@
+<layout>
+    <magecomm_dummyadmin_adminhtml_index_index>
+        <reference name="content">
+            <block type="core/template" name="magecomm.dummyadmin" template="magecomm/dummyadmin/dummyadmin.phtml"/>
+        </reference>
+    </magecomm_dummyadmin_adminhtml_index_index>
+    <magecomm_dummyadmin_adminhtml_categories_index>
+        <reference name="content">
+            <block type="magecomm_dummyadmin/adminhtml_categories" name="magecomm.dummyadmin.categories"/>
+        </reference>
+    </magecomm_dummyadmin_adminhtml_categories_index>
+</layout>

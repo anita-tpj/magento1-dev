@@ -1,0 +1,49 @@
+<config>
+
+    <modules>
+        <Magecomm_Dummyadmin>
+            <version>0.1.0</version>
+        </Magecomm_Dummyadmin>
+    </modules>
+    <global>
+        <helpers>
+            <magecomm_dummyadmin>
+                <class>Magecomm_Dummyadmin_Helper</class>
+            </magecomm_dummyadmin>
+        </helpers>
+        <blocks>
+            <magecomm_dummyadmin>
+                <class>Magecomm_Dummyadmin_Block</class>
+            </magecomm_dummyadmin>
+        </blocks>
+        <models>
+            <magecomm_dummyadmin>
+                <class>Magecomm_Dummyadmin_Model</class>
+            </magecomm_dummyadmin>
+        </models>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Magecomm_Dummyadmin before="-">Magecomm_Dummyadmin_Adminhtml</Magecomm_Dummyadmin>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+
+    <!--<adminhtml>
+            <layout>
+                <updates>
+                    <magecomm_dummyadmin>
+                        <file>magecomm/dummyadmin.xml</file>
+                    </magecomm_dummyadmin>
+                </updates>
+            </layout>
+    </adminhtml>-->
+
+</config>
