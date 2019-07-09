@@ -19,8 +19,24 @@
         <models>
             <magecomm_dummyadmin>
                 <class>Magecomm_Dummyadmin_Model</class>
+                <resourceModel>magecomm_dummyadmin_resource</resourceModel>
             </magecomm_dummyadmin>
+            <magecomm_dummyadmin_resource>
+                <class>Magecomm_Dummyadmin_Model_Resource</class>
+                <entities>
+                    <magecomm_dummyadmin_categories>
+                        <table>magecomm_dummyadmin_categories</table>
+                    </magecomm_dummyadmin_categories>
+                </entities>
+            </magecomm_dummyadmin_resource>
         </models>
+        <resources>
+            <magecomm_dummyadmin_setup>
+                <setup>
+                    <module>Magecomm_Dummyadmin</module>
+                </setup>
+            </magecomm_dummyadmin_setup>
+        </resources>
     </global>
 
     <admin>

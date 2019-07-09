@@ -8,19 +8,33 @@
                 <children>
                     <cms>
                         <children>
-                            <magecomm_dummyadmin translate="title" module="magecomm_dummyadmin">
+                            <dummyadmin translate="title" module="magecomm_dummyadmin">
                                 <title>Dummy Admin</title>
                                 <sort_order>30</sort_order>
-                            </magecomm_dummyadmin>
+                                <children>
+                                    <manage_categories translate="title" module="magecomm_dummyadmin">
+                                        <title>Manage Categories</title>
+                                        <action>adminhtml/categories</action>
+                                    </manage_categories>
+                                    <manage_posts translate="title" module="magecomm_dummyadmin">
+                                        <title>Manage Posts</title>
+                                        <!--<action>adminhtml/posts</action>-->
+                                    </manage_posts>
+                                    <manage_configuration translate="title" module="magecomm_dummyadmin">
+                                        <title>Manage Configuration</title>
+                                        <action>adminhtml/system_config/edit/section/dummyadmin</action>
+                                    </manage_configuration>
+                                </children>
+                            </dummyadmin>
                         </children>
                     </cms>
                     <system>
                         <children>
                             <config>
                                 <children>
-                                    <magecomm_dummyadmin translate="title" module="magecomm_dummyadmin">
+                                    <dummyadmin translate="title" module="magecomm_dummyadmin">
                                         <title>Dummy Admin</title>
-                                    </magecomm_dummyadmin>
+                                    </dummyadmin>
                                 </children>
                             </config>
                         </children>

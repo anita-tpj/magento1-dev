@@ -12,8 +12,6 @@ class Magecomm_Dummyadmin_Adminhtml_IndexController extends Mage_Adminhtml_Contr
     }*/
 
     public function indexAction() {
-        /*$this->loadLayout();
-        $this->renderLayout();*/
         $this->loadLayout();
         $this->_addContent($this->getLayout()->createBlock('core/template')->setTemplate('magecomm/dummyadmin/dummyadmin.phtml'));
         $this->renderLayout();

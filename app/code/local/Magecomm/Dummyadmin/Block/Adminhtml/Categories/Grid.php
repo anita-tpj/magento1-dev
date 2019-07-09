@@ -7,16 +7,16 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Grid extends Mage_Adminhtml
         parent::_construct();
 
         $this->setId('grid_id');
-        $this->setDefaultSort('category_id');
+        //$this->setDefaultSort('category_id');
         $this->setDefaultDir('asc');
         $this->setSaveParametersInSession(true);
-        $this->setUseAjax(true);
+        //$this->setUseAjax(true);
     }
 
     protected function _prepareCollection() {
+
         $collection = Mage::getModel('magecomm_dummyadmin/categories')->getCollection();
         $this->setCollection($collection);
-
         return parent::_prepareCollection();
 
     }
@@ -46,18 +46,29 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Grid extends Mage_Adminhtml
             );
             $this->addColumn('image',
                 array(
-                    'header' => Mage::helper('magecomm_dummyadmin')->__('Default Image'),
+                    'header' => Mage::helper('magecomm_dummyadmin')->__('Image'),
                     'type'     => 'image',
-                    'index'    => 'categroy_image',
+                    'index'    => 'category_image',
+                    'width'  => '100',
+                    'filter'    => false,
+                    'sortable'  => false,
+                    'renderer'  => 'Magecomm_Dummyadmin_Block_Adminhtml_Categories_Renderer_Category'
+                )
+            );
+            $this->addColumn('active',
+                array(
+                    'header'=> $this->__('Is active'),
+                    'index' => 'category_active',
+                    'width'  => '50',
                 )
             );
         } catch (Exception $e) {
             Mage::logException($e);
         }
 
-        $this->addExportType('*/*/exportCsv', $this->__('CSV'));
+//                $this->addExportType('*/*/exportCsv', $this->__('CSV'));
 
-        $this->addExportType('*/*/exportExcel', $this->__('Excel XML'));
+//                $this->addExportType('*/*/exportExcel', $this->__('Excel XML'));
 
         return parent::_prepareColumns();
     }
@@ -69,7 +80,7 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Grid extends Mage_Adminhtml
 
     protected function _prepareMassaction()
     {
-        $modelPk = Mage::getModel('magecomm_dumyadmin')->getResource()->getIdFieldName();
+        $modelPk = Mage::getModel('magecomm_dummyadmin/categories')->getResource()->getIdFieldName();
         $this->setMassactionIdField($modelPk);
         $this->getMassactionBlock()->setFormFieldName('ids');
         // $this->getMassactionBlock()->setUseSelectAll(false);
@@ -79,8 +90,10 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Grid extends Mage_Adminhtml
         ));
         return $this;
     }
-
-    public function getGridUrl() {
-        return $this->getUrl('*/*/grid', array('_current'=>true));
-    }
 }
+
+
+
+
+
+
