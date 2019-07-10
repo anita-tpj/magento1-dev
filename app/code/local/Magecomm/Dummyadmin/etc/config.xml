@@ -27,6 +27,9 @@
                     <magecomm_dummyadmin_categories>
                         <table>magecomm_dummyadmin_categories</table>
                     </magecomm_dummyadmin_categories>
+                    <magecomm_dummyadmin_posts>
+                        <table>magecomm_dummyadmin_posts</table>
+                    </magecomm_dummyadmin_posts>
                 </entities>
             </magecomm_dummyadmin_resource>
         </models>

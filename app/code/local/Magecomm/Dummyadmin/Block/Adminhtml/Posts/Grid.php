@@ -1,6 +1,6 @@
 <?php
 
-class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Grid extends Mage_Adminhtml_Block_Widget_Grid
+class Magecomm_Dummyadmin_Block_Adminhtml_Posts_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
     public function _construct() {
 
@@ -15,7 +15,7 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Grid extends Mage_Adminhtml
 
     protected function _prepareCollection() {
 
-        $collection = Mage::getModel('magecomm_dummyadmin/categories')->getCollection();
+        $collection = Mage::getModel('magecomm_dummyadmin/posts')->getCollection();
         $this->setCollection($collection);
         return parent::_prepareCollection();
 
@@ -24,41 +24,67 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Grid extends Mage_Adminhtml
     protected function _prepareColumns() {
 
         try {
-            $this->addColumn('category_id',
+            $this->addColumn('post_id',
                 array(
                     'header' => Mage::helper('magecomm_dummyadmin')->__('ID'),
                     'width'  => '50px',
                     'type' => 'number',
-                    'index'  => 'category_id'
+                    'index'  => 'post_id'
                 )
             );
-            $this->addColumn('category_name',
+            $this->addColumn('post_name',
                 array(
                     'header' => Mage::helper('magecomm_dummyadmin')->__('Name'),
-                    'index'  => 'category_name'
+                    'index'  => 'post_name'
                 )
             );
-            $this->addColumn('category_url',
+            $this->addColumn('post_url',
                 array(
                     'header' => Mage::helper('magecomm_dummyadmin')->__('URL Key'),
-                    'index'  => 'category_url'
+                    'index'  => 'post_url'
                 )
             );
-            $this->addColumn('category_image',
+            $this->addColumn('post_meta_title',
+                array(
+                    'header' => Mage::helper('magecomm_dummyadmin')->__('Meta Title'),
+                    'index'  => 'post_meta_title'
+                )
+            );
+            $this->addColumn('category_id',
+                array(
+                    'header' => Mage::helper('magecomm_dummyadmin')->__('Category'),
+                    'index'    => 'category_id',
+                    'options'  => $this->getCategoryNames(),
+                    //'renderer' => 'Magecomm_Resourcecenter_Block_Posts_Renderer_Categories_Categories'
+                )
+            );
+            $this->addColumn('post_content',
+                array(
+                    'header' => Mage::helper('magecomm_dummyadmin')->__('Content'),
+                    'index'  => 'post_content'
+                )
+            );
+            $this->addColumn('post_short_content',
+                array(
+                    'header' => Mage::helper('magecomm_dummyadmin')->__('Short Content'),
+                    'index'  => 'post_short_content'
+                )
+            );
+            $this->addColumn('post_image',
                 array(
                     'header' => Mage::helper('magecomm_dummyadmin')->__('Image'),
                     'type'     => 'image',
-                    'index'    => 'category_image',
+                    'index'    => 'post_image',
                     'width'  => '100',
                     'filter'    => false,
                     'sortable'  => false,
-                    'renderer'  => 'Magecomm_Dummyadmin_Block_Adminhtml_Categories_Renderer_Category'
+                    //'renderer'  => 'Magecomm_Dummyadmin_Block_Adminhtml_Posts_Renderer_Post'
                 )
             );
-            $this->addColumn('category_active',
+            $this->addColumn('post_active',
                 array(
-                    'header'=> $this->__('Is active'),
-                    'index' => 'category_active',
+                    'header'=> $this->__('Enabled'),
+                    'index' => 'post_active',
                     'width'  => '50',
                 )
             );
@@ -80,7 +106,7 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Grid extends Mage_Adminhtml
 
     protected function _prepareMassaction()
     {
-        $modelPk = Mage::getModel('magecomm_dummyadmin/categories')->getResource()->getIdFieldName();
+        $modelPk = Mage::getModel('magecomm_dummyadmin/posts')->getResource()->getIdFieldName();
         $this->setMassactionIdField($modelPk);
         $this->getMassactionBlock()->setFormFieldName('ids');
         // $this->getMassactionBlock()->setUseSelectAll(false);

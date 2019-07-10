@@ -18,7 +18,7 @@
                                     </manage_categories>
                                     <manage_posts translate="title" module="magecomm_dummyadmin">
                                         <title>Manage Posts</title>
-                                        <!--<action>adminhtml/posts</action>-->
+                                        <action>adminhtml/posts</action>
                                     </manage_posts>
                                     <manage_configuration translate="title" module="magecomm_dummyadmin">
                                         <title>Manage Configuration</title>
@@ -57,7 +57,7 @@
                         </manage_categories>
                         <manage_posts translate="title" module="magecomm_dummyadmin">
                             <title>Manage Posts</title>
-                            <!--<action>adminhtml/posts</action>-->
+                            <action>adminhtml/posts</action>
                         </manage_posts>
                         <manage_configuration translate="title" module="magecomm_dummyadmin">
                             <title>Manage Configuration</title>
