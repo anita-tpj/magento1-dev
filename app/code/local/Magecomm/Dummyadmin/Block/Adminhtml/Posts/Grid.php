@@ -81,11 +81,16 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Posts_Grid extends Mage_Adminhtml_Bloc
                     //'renderer'  => 'Magecomm_Dummyadmin_Block_Adminhtml_Posts_Renderer_Post'
                 )
             );
-            $this->addColumn('post_active',
+            $this->addColumn('post_status',
                 array(
-                    'header'=> $this->__('Enabled'),
-                    'index' => 'post_active',
+                    'header'=> $this->__('Status'),
+                    'index' => 'post_status',
                     'width'  => '50',
+                    'type'    => 'options',
+                    'options' => array(
+                        1 => 'Enabled',
+                        2 => 'Disabled',
+                    ),
                 )
             );
         } catch (Exception $e) {

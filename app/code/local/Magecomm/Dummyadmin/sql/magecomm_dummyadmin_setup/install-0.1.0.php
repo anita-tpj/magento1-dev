@@ -28,6 +28,9 @@ try {
         ->addColumn('category_image', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
             'nullable' => true
         ), 'Category default image')
+        ->addColumn('category_active', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+            'nullable' => false
+        ), 'Category status')
     ;
 
     $installer->getConnection()->createTable($table);
@@ -66,7 +69,7 @@ try {
         ->addColumn('post_meta_title', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
             'nullable' => false
         ), 'Post meta title')
-        ->addColumn('post_active', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+        ->addColumn('post_status', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
             'nullable' => false
         ), 'Post status')
     ;

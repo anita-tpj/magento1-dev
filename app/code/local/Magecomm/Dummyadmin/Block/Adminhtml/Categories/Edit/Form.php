@@ -54,8 +54,9 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Edit_Form extends Mage_Admi
             'name' => 'category_active',
             'label'     => $this->_getHelper()->__('Is active'),
             'required'  => true,
-            'options' => array(
-                "No", "Yes"
+            'values' => array(
+                1 => 'Yes',
+                2 => 'No'
             )
         ));
 

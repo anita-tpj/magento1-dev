@@ -75,12 +75,13 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Posts_Edit_Form extends Mage_Adminhtml
             'note'      => $this->_getHelper()->__('Image for post.')
         ));
 
-        $fieldset->addField('post_active', 'select', array(
-            'name' => 'post_active',
-            'label'     => $this->_getHelper()->__('Enabled'),
+        $fieldset->addField('post_status', 'select', array(
+            'name' => 'post_status',
+            'label'     => $this->_getHelper()->__('Status'),
             'required'  => true,
-            'options' => array(
-                "No", "Yes"
+            'values' => array(
+                1 => 'Enabled',
+                2 => 'Disabled'
             )
         ));
 

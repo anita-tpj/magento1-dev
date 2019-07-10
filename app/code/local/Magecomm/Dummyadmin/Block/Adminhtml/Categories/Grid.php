@@ -60,6 +60,11 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Grid extends Mage_Adminhtml
                     'header'=> $this->__('Is active'),
                     'index' => 'category_active',
                     'width'  => '50',
+                    'type'    => 'options',
+                    'options' => array(
+                        1 => 'Yes',
+                        2 => 'No',
+                    ),
                 )
             );
         } catch (Exception $e) {
