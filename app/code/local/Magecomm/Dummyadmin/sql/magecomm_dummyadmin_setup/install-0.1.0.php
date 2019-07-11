@@ -51,6 +51,9 @@ try {
             'nullable' => false,
             'primary'  => true),
             'Post id')
+        ->addColumn('category_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+            'nullable' => false
+        ), 'Post related categories')
         ->addColumn('post_name', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
             'nullable' => false
         ), 'Post title')
@@ -69,6 +72,9 @@ try {
         ->addColumn('post_meta_title', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
             'nullable' => false
         ), 'Post meta title')
+        ->addForeignKey($installer->getFkName('magecomm_dummyadmin_posts', 'post_id', 'magecomm_dummyadmin_categories', 'category_id'),
+            'category_id', $installer->getTable('magecomm_dummyadmin_categories'), 'category_id',
+            Varien_Db_Ddl_Table::ACTION_NO_ACTION, Varien_Db_Ddl_Table::ACTION_NO_ACTION)
         ->addColumn('post_status', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
             'nullable' => false
         ), 'Post status')

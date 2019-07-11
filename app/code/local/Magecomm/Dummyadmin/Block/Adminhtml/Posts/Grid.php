@@ -50,12 +50,14 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Posts_Grid extends Mage_Adminhtml_Bloc
                     'index'  => 'post_meta_title'
                 )
             );
+
             $this->addColumn('category_id',
                 array(
                     'header' => Mage::helper('magecomm_dummyadmin')->__('Category'),
                     'index'    => 'category_id',
+                    'type'    => 'options',
                     'options'  => $this->getCategoryNames(),
-                    //'renderer' => 'Magecomm_Resourcecenter_Block_Posts_Renderer_Categories_Categories'
+                    'renderer' => 'Magecomm_Dummyadmin_Block_Adminhtml_Posts_Renderer_Categories'
                 )
             );
             $this->addColumn('post_content',
@@ -78,7 +80,7 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Posts_Grid extends Mage_Adminhtml_Bloc
                     'width'  => '100',
                     'filter'    => false,
                     'sortable'  => false,
-                    //'renderer'  => 'Magecomm_Dummyadmin_Block_Adminhtml_Posts_Renderer_Post'
+                    'renderer'  => 'Magecomm_Dummyadmin_Block_Adminhtml_Posts_Renderer_Images'
                 )
             );
             $this->addColumn('post_status',
@@ -120,6 +122,17 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Posts_Grid extends Mage_Adminhtml_Bloc
             'url'   => $this->getUrl('*/*/massDelete'),
         ));
         return $this;
+    }
+
+    public function getCategoryNames()
+    {
+        $categoryCollection = Mage::getModel('magecomm_dummyadmin/categories')->getCollection();
+        $categoryNames = array();
+        foreach ($categoryCollection as $category) {
+            $categoryNames[$category->getId()] = $category->getCategory_name();
+        }
+
+        return $categoryNames;
     }
 }
 

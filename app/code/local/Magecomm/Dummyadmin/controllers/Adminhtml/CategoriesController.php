@@ -97,7 +97,7 @@ class Magecomm_Dummyadmin_Adminhtml_CategoriesController extends Mage_Adminhtml_
             }
 
             $uploadHelper = Mage::helper('magecomm_dummyadmin/categoriesupload');
-            $uploadKeys = ["image"];
+            $uploadKeys = ["category_image"];
             foreach ($uploadKeys as $uploadKey) {
                 if (!empty($_FILES[$uploadKey]['name'])) {
                     try {

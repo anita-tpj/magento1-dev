@@ -51,9 +51,21 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Posts_Edit_Form extends Mage_Adminhtml
         ));
 
         $fieldset->addField('post_meta_title', 'text', array(
-            'name' => 'post_name',
+            'name' => 'post_meta_title',
             'label'     => $this->_getHelper()->__('Meta title'),
             'required'  => true
+        ));
+
+        $options = Mage::getModel('magecomm_dummyadmin/categories')->getCollection()
+            ->addFieldToSelect('category_id', 'value')
+            ->addFieldToSelect('category_name', 'label')
+            ->getData();
+
+        $fieldset->addField('category_id', 'select', array(
+            'name'     => 'category_id',
+            'label'    => $this->_getHelper()->__('Category'),
+            'required' => true,
+            'values'   => $options
         ));
 
         $fieldset->addField('post_content', 'text', array(

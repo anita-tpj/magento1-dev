@@ -97,7 +97,7 @@ class Magecomm_Dummyadmin_Adminhtml_PostsController extends Mage_Adminhtml_Contr
             }
 
             $uploadHelper = Mage::helper('magecomm_dummyadmin/postsupload');
-            $uploadKeys = ["image"];
+            $uploadKeys = ["post_image"];
             foreach ($uploadKeys as $uploadKey) {
                 if (!empty($_FILES[$uploadKey]['name'])) {
                     try {

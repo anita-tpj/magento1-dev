@@ -1,5 +1,5 @@
 <?php
-class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Renderer_Category extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
+class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Renderer_Images extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
 {
 
     public function render(Varien_Object $row) {

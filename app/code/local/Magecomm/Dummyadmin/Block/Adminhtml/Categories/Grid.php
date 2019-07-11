@@ -52,7 +52,7 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories_Grid extends Mage_Adminhtml
                     'width'  => '100',
                     'filter'    => false,
                     'sortable'  => false,
-                    'renderer'  => 'Magecomm_Dummyadmin_Block_Adminhtml_Categories_Renderer_Category'
+                    'renderer'  => 'Magecomm_Dummyadmin_Block_Adminhtml_Categories_Renderer_Images'
                 )
             );
             $this->addColumn('category_active',
