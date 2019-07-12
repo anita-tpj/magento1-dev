@@ -1,0 +1,7 @@
+<layout>
+    <magecomm_dummyadmin_index_index>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/magecomm/dummyadmin/dummyadmin.css</name></action>
+        </reference>
+    </magecomm_dummyadmin_index_index>
+</layout>

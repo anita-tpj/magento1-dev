@@ -5,6 +5,7 @@
             <version>0.1.0</version>
         </Magecomm_Dummyadmin>
     </modules>
+
     <global>
         <helpers>
             <magecomm_dummyadmin>
@@ -53,6 +54,25 @@
             </adminhtml>
         </routers>
     </admin>
+
+    <frontend>
+        <routers>
+            <magecomm_dummyadmin>
+                <use>standard</use>
+                <args>
+                    <module>Magecomm_Dummyadmin</module>
+                    <frontName>dummyadmin</frontName>
+                </args>
+            </magecomm_dummyadmin>
+        </routers>
+        <layout>
+            <updates>
+                <magecomm_dummyadmin>
+                    <file>magecomm/dummyadmin.xml</file>
+                </magecomm_dummyadmin>
+            </updates>
+        </layout>
+    </frontend>
 
 
     <!--<adminhtml>
