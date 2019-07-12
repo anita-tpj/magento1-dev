@@ -6,7 +6,7 @@ $postsCollection = Mage::getModel('magecomm_dummyadmin/posts')->getCollection();
 
 ?>
 
-<header class="header">
+<header class="page-header">
     <h1><?php echo $_helper->getTitle()?$_helper->getTitle():__('Dummy Admin Blog Page');?></h1>
 </header>
 
@@ -31,7 +31,7 @@ if($catCollection):
 
                         <div class="post">
                             <?php if($rpost->getPost_name()): ?>
-                                <h3 class="post-name"><a href="<?php echo __($rpost->getPost_name());?>"><?php echo __($rpost->getPost_name()); ?></a></h3>
+                                <h3 class="post-name"><a href="<?php echo __($rpost->getPost_url());?>"><?php echo __($rpost->getPost_name()); ?></a></h3>
                             <?php endif; ?>
                             <?php if($rpost->getPost_image()): ?>
                                 <div class="post-img">

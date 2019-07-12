@@ -10,9 +10,7 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Posts extends Mage_Adminhtml_Block_Wid
         parent::__construct();
     }
 
-    public function getCreateUrl()
-    {
+    public function getCreateUrl() {
         return $this->getUrl('*/*/new');
     }
-
 }

@@ -1,6 +1,3 @@
-.magecomm-dummyadmin-index-index {
-}
-
 /*Utility classes*/
 .fjc-sb {
     justify-content: space-between;
@@ -8,6 +5,10 @@
 
 .fjc-fs {
     justify-content: flex-start;
+}
+
+/*Dummy Admin Blog page*/
+.magecomm-dummyadmin-index-index {
 }
 
 .category-row {
@@ -100,3 +101,38 @@
         width: 370px;
     }
 }
+
+/*Dummy Admin Single Post page*/
+.magecomm-dummyadmin-index-view {}
+
+.post-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.post-content .post-img {
+    flex: 1 1 100%;
+}
+
+.post-content .post-img img{
+    width: 100%;
+}
+
+.post-content .post-text {
+    flex: 1 1 100%;
+}
+
+@media(min-width: 768px) {
+
+    .post-content .post-img {
+        flex: 1 1 30%;
+    }
+
+    .post-content .post-text {
+        flex: 1 1 60%;
+        margin-top: 20px;
+    }
+}
+/*Dummy Admin Single Category page*/
+.magecomm-dummyadmin-index-view {}

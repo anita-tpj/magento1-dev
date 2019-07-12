@@ -41,6 +41,17 @@
                 </setup>
             </magecomm_dummyadmin_setup>
         </resources>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <magecomm_dummyadmin>
+                        <type>singleton</type>
+                        <class>Magecomm_Dummyadmin_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </magecomm_dummyadmin>
+                </observers>
+            </controller_front_init_routers>
+        </events>
     </global>
 
     <admin>

@@ -27,4 +27,13 @@ class Magecomm_Dummyadmin_Helper_Data extends Mage_Core_Helper_Abstract
         return Mage::getStoreConfig('dummyadmin/settings/meta_title');
     }
 
+    public function loadPostByUrlKey($url_key) {
+        $post = Mage::getModel('magecomm_dummyadmin/posts')
+            ->getCollection()
+            ->addFieldToFilter('post_url', $url_key)
+            ->getFirstItem()
+            ;
+        return $post;
+    }
+
 }

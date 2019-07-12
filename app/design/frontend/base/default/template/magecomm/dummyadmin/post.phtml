@@ -1,0 +1,12 @@
+<?php
+$post = Mage::registry('current_post');
+$postImage = $this->getPostImage($post); ?>
+
+<header class="post-header">
+    <h1><?php echo $post->getPost_name(); ?></h1>
+</header>
+
+<main class="post-content">
+    <div class="post-img"><img alt="" src="<?php echo Mage::getBaseUrl('media') . $post->getPost_image(); ?>"/></div>
+    <p class="post-text"><?php echo $post->getPost_content(); ?></p>
+</main>
