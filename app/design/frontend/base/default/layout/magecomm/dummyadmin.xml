@@ -4,7 +4,13 @@
             <action method="addItem"><type>skin_css</type><name>css/magecomm/dummyadmin/dummyadmin.css</name></action>
         </reference>
     </default>
-    <magecomm_dummyadmin_index_index>
 
+    <magecomm_dummyadmin_index_index>
     </magecomm_dummyadmin_index_index>
+
+    <magecomm_dummyadmin_index_post_view>
+    </magecomm_dummyadmin_index_post_view>
+
+    <magecomm_dummyadmin_index_category_view>
+    </magecomm_dummyadmin_index_category_view>
 </layout>

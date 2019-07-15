@@ -44,11 +44,11 @@
         <events>
             <controller_front_init_routers>
                 <observers>
-                    <magecomm_dummyadmin>
+                    <dummyadmin>
                         <type>singleton</type>
                         <class>Magecomm_Dummyadmin_Controller_Router</class>
                         <method>initControllerRouters</method>
-                    </magecomm_dummyadmin>
+                    </dummyadmin>
                 </observers>
             </controller_front_init_routers>
         </events>

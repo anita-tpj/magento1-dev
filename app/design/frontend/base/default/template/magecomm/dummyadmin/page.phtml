@@ -7,10 +7,15 @@ $postsCollection = Mage::getModel('magecomm_dummyadmin/posts')->getCollection();
 ?>
 
 <header class="page-header">
+    <?php if($_helper->getImage()): ?>
+    <div class="page-img">
+        <img src="<?php echo Mage::getBaseUrl('media') .  "wysiwyg/dummyadmin/metaimage/" . $_helper->getImage(); ?>"/>
+    </div>
+    <?php endif; ?>
     <h1><?php echo $_helper->getTitle()?$_helper->getTitle():__('Dummy Admin Blog Page');?></h1>
 </header>
 
-<main class="main-content">
+<main class="page-content">
 <?php
 if($catCollection):
     foreach($catCollection as $cat):
@@ -18,9 +23,6 @@ if($catCollection):
         if($recentPostsByCategory): ?>
             <div class="category-row">
                 <div class="cat-title">
-                    <?php if($cat->getCategory_image()): ?>
-                        <div class="cat-img"><img width="100%" height="180px" alt="" src="<?php echo Mage::getBaseUrl('media'). $cat->getCategory_image(); ?>"/></div>
-                    <?php endif; ?>
                     <?php if($cat->getCategory_name()): ?>
                         <h2><a href="<?php echo $cat->getCategory_url(); ?>"><?php echo $cat->getCategory_name(); ?></a></h2>
                     <?php endif; ?>

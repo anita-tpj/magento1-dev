@@ -36,4 +36,13 @@ class Magecomm_Dummyadmin_Helper_Data extends Mage_Core_Helper_Abstract
         return $post;
     }
 
+    public function loadCatByUrlKey($url_key) {
+        $category = Mage::getModel('magecomm_dummyadmin/categories')
+            ->getCollection()
+            ->addFieldToFilter('category_url', $url_key)
+            ->getFirstItem()
+        ;
+        return $category;
+    }
+
 }
