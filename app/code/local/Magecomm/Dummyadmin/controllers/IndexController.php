@@ -6,14 +6,20 @@ class Magecomm_Dummyadmin_IndexController extends Mage_Core_Controller_Front_Act
         //Get current layout state
         $this->loadLayout();
 
-        $block = $this->getLayout()->createBlock(
+        $content_block = $this->getLayout()->createBlock(
             'Mage_Core_Block_Template', //(core/template)
             'page',
             array('template' => 'magecomm/dummyadmin/page.phtml')
         );
+        $_helper = Mage::helper('magecomm_dummyadmin');
 
+        $head = $this->getLayout()->createBlock('core/template');
+        $head->setTemplate("magecomm/dummyadmin/page-meta.phtml");
+        $this->getLayout()->getBlock('head')->append($head);
         $this->getLayout()->getBlock('root')->setTemplate('page/1column.phtml');
-        $this->getLayout()->getBlock('content')->append($block);
+        $this->getLayout()->getBlock('content')->append($content_block);
+
+        $this->getLayout()->getBlock('head')->setTitle($_helper->getMetaTitle());
         $this->_initLayoutMessages('core/session');
         $this->renderLayout();
     }
@@ -25,7 +31,6 @@ class Magecomm_Dummyadmin_IndexController extends Mage_Core_Controller_Front_Act
             $post = Mage::helper('magecomm_dummyadmin')->loadPostByUrlKey($url_key);
         else:
             $post = null;
-            $cat = null;
         endif;
 
         if($post->getPost_url()):
@@ -39,6 +44,7 @@ class Magecomm_Dummyadmin_IndexController extends Mage_Core_Controller_Front_Act
             $this->loadLayout();
             $this->getLayout()->getBlock('head')->setTitle($post->getPost_meta_title());
             //$this->getLayout()->getBlock('head')->setDescription(substr(strips_tags($post->getPost_short_content())));
+            //$this->getLayout()->getBlock('head')->setKeywords($post->getPost_meta_keywords());
             $this->getLayout()->getBlock('root')->setTemplate('page/1column.phtml');
             $this->getLayout()->getBlock('content')->append($block);
             $this->renderLayout();
@@ -53,7 +59,6 @@ class Magecomm_Dummyadmin_IndexController extends Mage_Core_Controller_Front_Act
         if($url_key != null && $url_key != ''):
             $category = Mage::helper('magecomm_dummyadmin')->loadCatByUrlKey($url_key);
         else:
-            $post = null;
             $cat = null;
         endif;
 
@@ -66,8 +71,7 @@ class Magecomm_Dummyadmin_IndexController extends Mage_Core_Controller_Front_Act
 
             Mage::register('current_category', $category);
             $this->loadLayout();
-            $this->getLayout()->getBlock('head')->setTitle($category->getCategory_meta_title());
-            //$this->getLayout()->getBlock('head')->setDescription(substr(strips_tags($post->getPost_short_content())));
+            $this->getLayout()->getBlock('head')->setTitle($category->getCategory_name());
             $this->getLayout()->getBlock('root')->setTemplate('page/1column.phtml');
             $this->getLayout()->getBlock('content')->append($block);
             $this->renderLayout();

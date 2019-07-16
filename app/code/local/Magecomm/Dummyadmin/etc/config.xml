@@ -85,15 +85,18 @@
         </layout>
     </frontend>
 
+    <default>
+        <dummyadmin>
+            <settings>
+                <router>dummyadmino</router>
+                <name>RTA Cabinets Resource Center - The RTA Store</name>
+                <meta_title>Dummyadmin Blog page</meta_title>
+                <!--<meta_description>Dummyadmin Blog with single post, category posts, and main recent post by categories pages</meta_description>-->
+                <meta_image>dummyadmin-blog.jpg</meta_image>
+                <items_per_page>60</items_per_page>
+            </settings>
+        </dummyadmin>
+    </default>
 
-    <!--<adminhtml>
-            <layout>
-                <updates>
-                    <magecomm_dummyadmin>
-                        <file>magecomm/dummyadmin.xml</file>
-                    </magecomm_dummyadmin>
-                </updates>
-            </layout>
-    </adminhtml>-->
 
 </config>

@@ -1,16 +1,27 @@
 <layout>
-    <default>
+    <magecomm_dummyadmin_index_index>
         <reference name="head">
             <action method="addItem"><type>skin_css</type><name>css/magecomm/dummyadmin/dummyadmin.css</name></action>
         </reference>
-    </default>
-
-    <magecomm_dummyadmin_index_index>
     </magecomm_dummyadmin_index_index>
 
     <magecomm_dummyadmin_index_post_view>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/magecomm/dummyadmin/dummyadmin.css</name></action>
+            <action method="setTitle"><title>MetaTitle</title></action>
+            <action method="setImage"><title>MetaImage</title></action>
+            <!--<action method="setKeywords"><title>MetaKeywords</title></action>-->
+            <!--<action method="setDescription"><title>MetaDescription</title></action>-->
+            <block type="magecomm_dummyadmin/adminhtml_posts" name="dummyadmin_post_meta" template="magecomm/dummyadmin/post-meta.phtml" />
+        </reference>
     </magecomm_dummyadmin_index_post_view>
 
     <magecomm_dummyadmin_index_category_view>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/magecomm/dummyadmin/dummyadmin.css</name></action>
+            <action method="setTitle"><title>MetaTitle</title></action>
+            <action method="setImage"><title>MetaImage</title></action>
+            <block type="magecomm_dummyadmin/adminhtml_categories" name="dummyadmin_page_meta" template="magecomm/dummyadmin/category-meta.phtml" />
+        </reference>
     </magecomm_dummyadmin_index_category_view>
 </layout>

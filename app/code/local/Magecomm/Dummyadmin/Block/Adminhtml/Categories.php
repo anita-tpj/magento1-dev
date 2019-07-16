@@ -10,9 +10,18 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories extends Mage_Adminhtml_Bloc
         parent::__construct();
     }
 
-    public function getCreateUrl()
-    {
+    public function getCreateUrl() {
         return $this->getUrl('*/*/new');
+    }
+
+    public function getCategoryImage($category)
+    {
+        $image = $category->getCategory_image();
+        if (isset($image)) {
+            return Mage::getBaseUrl('media') . $image;
+        } else {
+            return false;
+        }
     }
 
 }

@@ -7,9 +7,9 @@ $postsCollection = Mage::getModel('magecomm_dummyadmin/posts')->getCollection();
 ?>
 
 <header class="page-header">
-    <?php if($_helper->getImage()): ?>
+    <?php if($_helper->getMetaImage()): ?>
     <div class="page-img">
-        <img src="<?php echo Mage::getBaseUrl('media') .  "wysiwyg/dummyadmin/metaimage/" . $_helper->getImage(); ?>"/>
+        <img src="<?php echo Mage::getBaseUrl('media') .  "wysiwyg/dummyadmin/metaimage/" . $_helper->getMetaImage(); ?>"/>
     </div>
     <?php endif; ?>
     <h1><?php echo $_helper->getTitle()?$_helper->getTitle():__('Dummy Admin Blog Page');?></h1>

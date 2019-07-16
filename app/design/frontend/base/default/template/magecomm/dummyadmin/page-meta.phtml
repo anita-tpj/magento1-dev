@@ -1,0 +1,15 @@
+<?php
+$_helper = Mage::helper(magecomm_dummyadmin);
+$getMetaTitle = $_helper->getMetaTitle();
+$getMetaImage = $_helper->getMetaImage();
+?>
+
+<meta property="og:url" content="<?php echo $this->helper('core/url')->getCurrentUrl(); ?>" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="<?php echo $getMetaTitle; ?>" />
+
+<?php if ($getMetaImage) { ?>
+    <meta property="og:image" content="<?php echo Mage::getBaseUrl('media') . "wysiwyg/dummyadmin/metaimage/" . $getMetaImage; ?>" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="450" />
+<?php } ?>
