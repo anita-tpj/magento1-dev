@@ -1,4 +1,23 @@
 <layout>
+    <default>
+        <reference name="footer_links">
+            <action method="addLink" translate="label title" module="magecomm_dummyadmin">
+                <label>Dummyadmin Blog</label>
+                <url helper="magecomm_dummyadmin/getUrlKey" />
+                <title>Dummyadmin Blog</title>
+            </action>
+        </reference>
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="magecomm_dummyadmin">
+                <label>Dummyadmin Blog</label>
+                <url>dummyadmin</url>
+                <title>Dummyadmin Blog</title>
+                <prepare/>
+                <urlParams/>
+                <position>100</position>
+            </action>
+        </reference>
+    </default>
     <magecomm_dummyadmin_index_index>
         <reference name="head">
             <action method="addItem"><type>skin_css</type><name>css/magecomm/dummyadmin/dummyadmin.css</name></action>
