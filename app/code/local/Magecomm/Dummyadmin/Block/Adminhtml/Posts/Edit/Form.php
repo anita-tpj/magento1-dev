@@ -68,16 +68,20 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Posts_Edit_Form extends Mage_Adminhtml
             'values'   => $options
         ));
 
-        $fieldset->addField('post_content', 'text', array(
+        $fieldset->addField('post_content', 'editor', array(
             'name' => 'post_content',
             'label'     => $this->_getHelper()->__('Content'),
-            'required'  => true
+            'required'  => true,
+            'config'   => Mage::getSingleton('cms/wysiwyg_config')->getConfig(),
+            'wysiwyg'  => true,
+            'style'    => 'height:500px;',
         ));
 
-        $fieldset->addField('post_short_content', 'text', array(
+        $fieldset->addField('post_short_content', 'textarea', array(
             'name' => 'post_short_content',
             'label'     => $this->_getHelper()->__('Short Content'),
-            'required'  => true
+            'required'  => true,
+            'style'    => 'height:60px;',
         ));
 
         $fieldset->addField('post_image', 'image', array(
