@@ -13,4 +13,14 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Posts extends Mage_Adminhtml_Block_Wid
     public function getCreateUrl() {
         return $this->getUrl('*/*/new');
     }
+
+    public function getPostImage($post)
+    {
+        $image = $post->getPost_image();
+        if (isset($image)) {
+            return Mage::getBaseUrl('media') . $image;
+        } else {
+            return false;
+        }
+    }
 }

@@ -7,6 +7,6 @@ $postImage = $this->getPostImage($post); ?>
 </header>
 
 <main class="post-content">
-    <div class="post-img"><img alt="" src="<?php echo Mage::getBaseUrl('media') . $post->getPost_image(); ?>"/></div>
+    <div class="post-img"><img alt="" src="<?php echo $postImage ?>"/></div>
     <p class="post-text"><?php echo $post->getPost_content(); ?></p>
 </main>

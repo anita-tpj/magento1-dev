@@ -44,10 +44,8 @@ class Magecomm_Dummyadmin_IndexController extends Mage_Core_Controller_Front_Act
 
         if($post->getPost_url()):
             $block = $this->getLayout()->createBlock(
-                'Mage_Core_Block_Template', //(core/template)
-                'post',
-                array('template' => 'magecomm/dummyadmin/post.phtml')
-            );
+                'magecomm_dummyadmin/adminhtml_posts', //(core/template)
+                'dumyadmin_category')->setTemplate('magecomm/dummyadmin/post.phtml');
 
             Mage::register('current_post', $post);
             $this->loadLayout();
@@ -72,11 +70,9 @@ class Magecomm_Dummyadmin_IndexController extends Mage_Core_Controller_Front_Act
         endif;
 
         if($category->getCategory_url()):
-            $block = $this->getLayout()->createBlock(
-                'Mage_Core_Block_Template', //(core/template)
-                'post',
-                array('template' => 'magecomm/dummyadmin/category.phtml')
-            );
+                $block = $this->getLayout()->createBlock(
+                'magecomm_dummyadmin/adminhtml_categories', //(core/template)
+                'dumyadmin_category')->setTemplate('magecomm/dummyadmin/category.phtml');
 
             Mage::register('current_category', $category);
             $this->loadLayout();

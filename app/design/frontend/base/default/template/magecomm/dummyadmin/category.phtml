@@ -1,11 +1,11 @@
 <?php
 $category = Mage::registry('current_category');
-?>
+$categoryImage = $this->getCategoryImage($category); ?>
 
 <header class="cat-title">
     <h1><?php echo $category->getCategory_name(); ?></h1>
     <?php if($category->getCategory_image()): ?>
-        <div class="cat-img"><img width="100%" height="300px" alt="" src="<?php echo Mage::getBaseUrl('media'). $category->getCategory_image(); ?>"/></div>
+        <div class="cat-img"><img width="100%" height="300px" alt="" src="<?php echo $categoryImage; ?>"/></div>
     <?php endif; ?>
 </header>
 <main class="category-content category-row">
@@ -26,7 +26,10 @@ $category = Mage::registry('current_category');
                     </div>
                 <?php endif; ?>
                 <?php if($rpost->getPost_short_content()): ?>
-                    <div class="post-excerpt"><?php echo __($rpost->getPost_short_content());?></div>
+                    <div class="post-excerpt">
+                        <p><?php echo __($rpost->getPost_short_content());?></p>
+                        <a class="read-more" target="_blank" href="<?php echo __($rpost->getPost_url());?>">Read more</a>
+                    </div>
                 <?php endif; ?>
             </div>
         <?php

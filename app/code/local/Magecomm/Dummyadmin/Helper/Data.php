@@ -45,13 +45,9 @@ class Magecomm_Dummyadmin_Helper_Data extends Mage_Core_Helper_Abstract
         return $category;
     }
 
-    public function getMetaImageSrc() {
-        $image = $this->getMetaImage();
-        if (isset($image)) {
+    public function getDefaultImage() {
+        $image = 'wysiwyg/dummyadmin/default-img.jpg';
             return Mage::getBaseUrl('media') . $image;
-        } else {
-            return false;
-        }
     }
 
 }

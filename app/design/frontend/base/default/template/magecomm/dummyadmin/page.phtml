@@ -7,11 +7,13 @@ $postsCollection = Mage::getModel('magecomm_dummyadmin/posts')->getCollection();
 ?>
 
 <header class="page-header">
-    <?php if($_helper->getMetaImage()): ?>
     <div class="page-img">
-        <img src="<?php echo Mage::getBaseUrl('media') .  "wysiwyg/dummyadmin/metaimage/" . $_helper->getMetaImage(); ?>"/>
+        <?php if($_helper->getMetaImage()): ?>
+            <img src="<?php echo Mage::getBaseUrl('media') .  "wysiwyg/dummyadmin/metaimage/" . $_helper->getMetaImage(); ?>"/>
+        <?php else: ?>
+            <img src="<?php echo $_helper->getDefaultImage(); ?>"/>
+        <?php endif; ?>
     </div>
-    <?php endif; ?>
     <h1><?php echo $_helper->getTitle()?$_helper->getTitle():__('Dummy Admin Blog Page');?></h1>
 </header>
 
@@ -41,7 +43,10 @@ if($catCollection):
                                 </div>
                             <?php endif; ?>
                             <?php if($rpost->getPost_short_content()): ?>
-                                <div class="post-excerpt"><?php echo __($rpost->getPost_short_content());?></div>
+                                <div class="post-excerpt">
+                                    <p><?php echo __($rpost->getPost_short_content());?></p>
+                                    <a class="read-more" target="_blank" href="<?php echo __($rpost->getPost_url());?>">Read more</a>
+                                </div>
                             <?php endif; ?>
                         </div>
                     <?php

@@ -103,6 +103,18 @@
     background: #fafafa;
 }
 
+.category-row .cat-posts .post .post-excerpt .read-more {
+    display: inline-block;
+    background: #3399cc;
+    color: #fff;
+    padding: 5px 20px;
+    margin-top: 15px;
+}
+
+.category-row .cat-posts .post .post-excerpt .read-more:hover {
+    opacity: .8;
+}
+
 @media (min-width: 768px) {
 
     .category-row .cat-posts .post {

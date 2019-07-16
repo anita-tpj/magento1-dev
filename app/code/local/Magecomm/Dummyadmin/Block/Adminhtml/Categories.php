@@ -14,8 +14,7 @@ class Magecomm_Dummyadmin_Block_Adminhtml_Categories extends Mage_Adminhtml_Bloc
         return $this->getUrl('*/*/new');
     }
 
-    public function getCategoryImage($category)
-    {
+    public function getCategoryImage($category) {
         $image = $category->getCategory_image();
         if (isset($image)) {
             return Mage::getBaseUrl('media') . $image;
