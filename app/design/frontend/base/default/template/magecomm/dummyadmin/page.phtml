@@ -14,7 +14,7 @@ $postsCollection = Mage::getModel('magecomm_dummyadmin/posts')->getCollection();
             <img src="<?php echo $_helper->getDefaultImage(); ?>"/>
         <?php endif; ?>
     </div>
-    <h1><?php echo $_helper->getTitle()?$_helper->getTitle():__('Dummy Admin Blog Page');?></h1>
+    <h1><?php echo $_helper->getTitle() ? $_helper->getTitle():__('Dummy Admin Blog Page');?></h1>
 </header>
 
 <main class="page-content">
@@ -37,11 +37,13 @@ if($catCollection):
                             <?php if($rpost->getPost_name()): ?>
                                 <h3 class="post-name"><a href="<?php echo __($rpost->getPost_url());?>"><?php echo __($rpost->getPost_name()); ?></a></h3>
                             <?php endif; ?>
-                            <?php if($rpost->getPost_image()): ?>
-                                <div class="post-img">
+                            <div class="post-img">
+                                <?php if($rpost->getPost_image()): ?>
                                     <img src="<?php echo Mage::getBaseUrl('media'). $rpost->getPost_image(); ?>" width="380px" height="250px" alt=""/>
-                                </div>
-                            <?php endif; ?>
+                                <?php else: ?>
+                                    <img src="<?php echo $_helper->getDefaultImage(); ?>" width="380px" height="250px" alt=""/>
+                                <?php endif; ?>
+                            </div>
                             <?php if($rpost->getPost_short_content()): ?>
                                 <div class="post-excerpt">
                                     <p><?php echo __($rpost->getPost_short_content());?></p>

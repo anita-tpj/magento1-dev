@@ -7,6 +7,8 @@ $postImage = $this->getPostImage($post); ?>
 </header>
 
 <main class="post-content">
-    <div class="post-img"><img alt="" src="<?php echo $postImage ?>"/></div>
+    <?php if($postImage): ?>
+        <div class="post-img"><img alt="" src="<?php echo $postImage ?>"/></div>
+    <?php endif; ?>
     <p class="post-text"><?php echo $post->getPost_content(); ?></p>
 </main>
