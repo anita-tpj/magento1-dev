@@ -65,6 +65,15 @@
             </adminhtml>
         </routers>
     </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <magecomm_dummyadmin  module="Magecomm_Dummyadmin">
+                    <file>magecomm/dummyadmin.xml</file>
+                </magecomm_dummyadmin>
+            </updates>
+        </layout>
+    </adminhtml>
 
     <frontend>
         <routers>
