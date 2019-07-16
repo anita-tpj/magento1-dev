@@ -3,6 +3,15 @@
 class Magecomm_Dummyadmin_Adminhtml_CategoriesController extends Mage_Adminhtml_Controller_Action
 {
 
+    public function preDispatch() {
+        parent::preDispatch();
+
+        if (!Mage::helper('magecomm_dummyadmin')->isEnabled(Mage::app()->getStore())) {
+            $this->setFlag('', 'no-dispatch', true);
+            $this->_redirect('noRoute');
+        }
+    }
+
     public function indexAction() {
         $this->loadLayout();
         $this->_setActiveMenu('cms/magecomm_dummyadmin/manage_categories');

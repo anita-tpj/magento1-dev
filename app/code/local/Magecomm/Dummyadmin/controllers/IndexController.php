@@ -2,6 +2,15 @@
 
 class Magecomm_Dummyadmin_IndexController extends Mage_Core_Controller_Front_Action {
 
+    public function preDispatch() {
+        parent::preDispatch();
+
+        if (!Mage::helper('magecomm_dummyadmin')->isEnabled(Mage::app()->getStore())) {
+            $this->setFlag('', 'no-dispatch', true);
+            $this->_redirect('noRoute');
+        }
+    }
+
     public function indexAction() {
         //Get current layout state
         $this->loadLayout();
