@@ -5,58 +5,59 @@ $catCollection = Mage::getModel('magecomm_dummyadmin/categories')->getCollection
 $postsCollection = Mage::getModel('magecomm_dummyadmin/posts')->getCollection();
 
 ?>
+<div class="dummyadmin">
+    <header class="page-header">
+        <div class="page-img">
+            <?php if($_helper->getMetaImage()): ?>
+                <img src="<?php echo Mage::getBaseUrl('media') .  "wysiwyg/dummyadmin/metaimage/" . $_helper->getMetaImage(); ?>"/>
+            <?php else: ?>
+                <img src="<?php echo $_helper->getDefaultImage(); ?>"/>
+            <?php endif; ?>
+        </div>
+        <h1><?php echo $_helper->getTitle() ? $_helper->getTitle():__('Dummy Admin Blog Page');?></h1>
+    </header>
 
-<header class="page-header">
-    <div class="page-img">
-        <?php if($_helper->getMetaImage()): ?>
-            <img src="<?php echo Mage::getBaseUrl('media') .  "wysiwyg/dummyadmin/metaimage/" . $_helper->getMetaImage(); ?>"/>
-        <?php else: ?>
-            <img src="<?php echo $_helper->getDefaultImage(); ?>"/>
-        <?php endif; ?>
-    </div>
-    <h1><?php echo $_helper->getTitle() ? $_helper->getTitle():__('Dummy Admin Blog Page');?></h1>
-</header>
+    <main class="page-content">
+    <?php
+    if($catCollection):
+        foreach($catCollection as $cat):
+            $recentPostsByCategory= Mage::getModel('magecomm_dummyadmin/recentposts')->_getRecentCollection(3, $cat->getCategory_id());
+            if($recentPostsByCategory): ?>
+                <div class="category-row">
+                    <div class="cat-title">
+                        <?php if($cat->getCategory_name()): ?>
+                            <h2><a href="<?php echo $cat->getCategory_url(); ?>"><?php echo $cat->getCategory_name(); ?></a></h2>
+                        <?php endif; ?>
+                    </div>
+                    <div class="cat-posts <?php if(count($recentPostsByCategory)<3): ?>fjc-fs<?php else: ?>fjc-sb<?php endif; ?>">
+                        <?php
+                        foreach($recentPostsByCategory as $rpost): ?>
 
-<main class="page-content">
-<?php
-if($catCollection):
-    foreach($catCollection as $cat):
-        $recentPostsByCategory= Mage::getModel('magecomm_dummyadmin/recentposts')->_getRecentCollection(3, $cat->getCategory_id());
-        if($recentPostsByCategory): ?>
-            <div class="category-row">
-                <div class="cat-title">
-                    <?php if($cat->getCategory_name()): ?>
-                        <h2><a href="<?php echo $cat->getCategory_url(); ?>"><?php echo $cat->getCategory_name(); ?></a></h2>
-                    <?php endif; ?>
-                </div>
-                <div class="cat-posts <?php if(count($recentPostsByCategory)<3): ?>fjc-fs<?php else: ?>fjc-sb<?php endif; ?>">
-                    <?php
-                    foreach($recentPostsByCategory as $rpost): ?>
-
-                        <div class="post">
-                            <?php if($rpost->getPost_name()): ?>
-                                <h3 class="post-name"><a href="<?php echo __($rpost->getPost_url());?>"><?php echo __($rpost->getPost_name()); ?></a></h3>
-                            <?php endif; ?>
-                            <div class="post-img">
-                                <?php if($rpost->getPost_image()): ?>
-                                    <img src="<?php echo Mage::getBaseUrl('media'). $rpost->getPost_image(); ?>" width="380px" height="250px" alt=""/>
-                                <?php else: ?>
-                                    <img src="<?php echo $_helper->getDefaultImage(); ?>" width="380px" height="250px" alt=""/>
+                            <div class="post">
+                                <?php if($rpost->getPost_name()): ?>
+                                    <h3 class="post-name"><a href="<?php echo __($rpost->getPost_url());?>"><?php echo __($rpost->getPost_name()); ?></a></h3>
+                                <?php endif; ?>
+                                <div class="post-img">
+                                    <?php if($rpost->getPost_image()): ?>
+                                        <img src="<?php echo Mage::getBaseUrl('media'). $rpost->getPost_image(); ?>" width="380px" height="250px" alt=""/>
+                                    <?php else: ?>
+                                        <img src="<?php echo $_helper->getDefaultImage(); ?>" width="380px" height="250px" alt=""/>
+                                    <?php endif; ?>
+                                </div>
+                                <?php if($rpost->getPost_short_content()): ?>
+                                    <div class="post-excerpt">
+                                        <p><?php echo __($rpost->getPost_short_content());?></p>
+                                        <a class="read-more" target="_blank" href="<?php echo __($rpost->getPost_url());?>">Read more</a>
+                                    </div>
                                 <?php endif; ?>
                             </div>
-                            <?php if($rpost->getPost_short_content()): ?>
-                                <div class="post-excerpt">
-                                    <p><?php echo __($rpost->getPost_short_content());?></p>
-                                    <a class="read-more" target="_blank" href="<?php echo __($rpost->getPost_url());?>">Read more</a>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                    <?php
-                    endforeach; ?>
+                        <?php
+                        endforeach; ?>
+                    </div>
                 </div>
-            </div>
-    <?php
-        endif;
-    endforeach;
-endif; ?>
-</main>
+        <?php
+            endif;
+        endforeach;
+    endif; ?>
+    </main>
+</div>

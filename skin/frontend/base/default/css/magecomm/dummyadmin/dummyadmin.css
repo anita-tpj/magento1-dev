@@ -1,26 +1,34 @@
 /*Utility classes*/
 .fjc-sb {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
 .fjc-fs {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
 }
 
 /*Dummy Admin Blog page*/
-.magecomm-dummyadmin-index-index {}
+/*Dummy Admin Single Category page*/
 
-.page-header {
+.dummyadmin .page-header {
     padding: 0 !important;
     position: relative;
     margin-bottom: 40px;
 }
 
-.page-header img{
+.dummyadmin .page-header img{
     width: 100%;
 }
 
-.page-header h1 {
+.dummyadmin .page-header h1 {
     position: absolute;
     display: inline-block;
     position: absolute;
@@ -32,16 +40,16 @@
     font-weight: bold;
 }
 
-.page-content {
+.dummyadmin .page-content {
     padding-top: 40px;
 }
 
-.category-row {
+.dummyadmin .category-row {
     padding: 15px 0;
 }
 
-.cat-title h1,
-.cat-title h2 {
+.dummyadmin .cat-title h1,
+.dummyadmin .cat-title h2 {
     display: inline-block;
     width: 100%;
     margin-bottom: 35px;
@@ -49,61 +57,75 @@
     border-bottom: 1px solid #3399cc;
 }
 
-.cat-title h2 {
+.dummyadmin .cat-title h2 {
     font-weight: bold;
     color: #3399cc;
 }
 
-.category-row .cat-title h2 a:hover {
+.dummyadmin .category-row .cat-title h2 a:hover {
     text-decoration: none;
     opacity: .8;
 }
 
-.category-row .cat-posts {
+.dummyadmin .category-row .cat-posts {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    //justify-content: flex-start;
+//justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
-.category-row .cat-posts .post {
+.dummyadmin .category-row .cat-posts .post {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 100%;
+    -moz-box-flex: 1;
+    -ms-flex: 1 1 100%;
     flex: 1 1 100%;
     border: 1px solid #ccc;
     margin-bottom: 20px;
 }
 
-.category-row .cat-posts.fjc-fs .post {
+.dummyadmin .category-row .cat-posts.fjc-fs .post {
     margin-right: 15px;
 }
 
-.category-row .cat-posts .post h3 {
+.dummyadmin .category-row .cat-posts .post h3 {
     font-weight: bold;
     padding: 15px;
     background: #fafafa;
     margin-bottom: 0;
 }
 
-.category-row .cat-posts .post h3 a  {
+.dummyadmin .category-row .cat-posts .post h3 a  {
     color: #424242;
 }
 
-.category-row .cat-posts .post .post-img{
+.dummyadmin .category-row .cat-posts .post .post-img{
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     width: 380px;
 }
 
-.category-row .cat-posts .post .post-img img{
+.dummyadmin .category-row .cat-posts .post .post-img img{
     width: 100%;
 }
 
-.category-row .cat-posts .post .post-excerpt {
+.dummyadmin .category-row .cat-posts .post .post-excerpt {
     padding: 15px;
     line-height: 1.7;
     background: #fafafa;
 }
 
-.category-row .cat-posts .post .post-excerpt .read-more {
+.dummyadmin .category-row .cat-posts .post .post-excerpt .read-more {
     display: inline-block;
     background: #3399cc;
     color: #fff;
@@ -111,66 +133,93 @@
     margin-top: 15px;
 }
 
-.category-row .cat-posts .post .post-excerpt .read-more:hover {
+.dummyadmin .category-row .cat-posts .post .post-excerpt .read-more:hover {
     opacity: .8;
 }
 
 @media (min-width: 768px) {
 
-    .category-row .cat-posts .post {
+    .dummyadmin .category-row .cat-posts .post {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 1 30%;
+        -moz-box-flex: 0;
+        -ms-flex: 0 1 30%;
         flex: 0 1 30%;
     }
 
-    .category-row .cat-posts .post .post-img{
+    .dummyadmin .category-row .cat-posts .post .post-img{
         width: 225px;
     }
 }
 
 @media (min-width: 992px) {
 
-    .category-row .cat-posts .post .post-img{
+    .dummyadmin .category-row .cat-posts .post .post-img{
         width: 280px;
     }
 }
 
 @media (min-width: 1200px) {
 
-    .category-row .cat-posts .post .post-img{
+    .dummyadmin .category-row .cat-posts .post .post-img{
         width: 370px;
     }
 }
 
 /*Dummy Admin Single Post page*/
-.magecomm-dummyadmin-index-post-view {}
 
-.post-content {
+.magecomm-dummyadmin-index-post-view .dummyadmin .post-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
-.post-content .post-img {
+.magecomm-dummyadmin-index-post-view .dummyadmin .post-content .post-img {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 100%;
+    -moz-box-flex: 1;
+    -ms-flex: 1 1 100%;
     flex: 1 1 100%;
 }
 
-.post-content .post-img img{
+.magecomm-dummyadmin-index-post-view .dummyadmin .post-content .post-img img{
     width: 100%;
 }
 
-.post-content .post-text {
+.magecomm-dummyadmin-index-post-view .dummyadmin .post-content .post-text {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 100%;
+    -moz-box-flex: 1;
+    -ms-flex: 1 1 100%;
     flex: 1 1 100%;
 }
 
 @media(min-width: 768px) {
 
-    .post-content .post-img {
+    .magecomm-dummyadmin-index-post-view .dummyadmin .post-content .post-img {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 30%;
+        -moz-box-flex: 1;
+        -ms-flex: 1 1 30%;
         flex: 1 1 30%;
     }
 
-    .post-content .post-text {
+    .magecomm-dummyadmin-index-post-view .dummyadmin .post-content .post-text {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 60%;
+        -moz-box-flex: 1;
+        -ms-flex: 1 1 60%;
         flex: 1 1 60%;
         margin-top: 20px;
     }
 }
-/*Dummy Admin Single Category page*/
-.magecomm-dummyadmin-index-category-view {}
